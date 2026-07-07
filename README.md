@@ -17,6 +17,8 @@
 - Vitest 单元测试与 Playwright E2E smoke 测试
 - ESLint、Stylelint、Prettier、TypeScript strict 工程质量配置
 
+![alt text](image.png)
+
 ## 技术栈
 
 - Vue 3
