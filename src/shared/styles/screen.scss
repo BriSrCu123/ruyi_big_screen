@@ -1,0 +1,67 @@
+.ruyi-screen {
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+  background:
+    linear-gradient(180deg, rgb(8 10 16 / 0.2), rgb(8 10 16 / 0.95)),
+    linear-gradient(90deg, rgb(57 217 200 / 0.08) 1px, transparent 1px),
+    linear-gradient(180deg, rgb(228 184 92 / 0.06) 1px, transparent 1px), #080a10;
+  background-size:
+    100% 100%,
+    48px 48px,
+    48px 48px,
+    auto;
+}
+
+.ruyi-screen::before {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  content: "";
+  background:
+    linear-gradient(115deg, transparent 0 18%, rgb(57 217 200 / 0.08) 28%, transparent 45%),
+    linear-gradient(245deg, transparent 0 24%, rgb(228 184 92 / 0.07) 36%, transparent 58%);
+}
+
+.ruyi-screen__content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  min-height: 720px;
+  padding: 18px 20px 20px;
+}
+
+.empty-state,
+.error-state,
+.loading-state {
+  display: grid;
+  min-height: 120px;
+  place-items: center;
+  color: var(--color-text-muted);
+  font-size: 14px;
+}
+
+.error-state {
+  color: var(--color-danger);
+}
+
+.status-dot {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--color-success);
+  box-shadow: 0 0 14px var(--color-success);
+}
+
+@media (width <= 1180px) {
+  body {
+    overflow: auto;
+  }
+
+  .ruyi-screen__content {
+    min-width: 980px;
+  }
+}

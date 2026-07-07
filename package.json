@@ -1,0 +1,54 @@
+{
+  "name": "ruyi-big-screen",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "RuyiBigScreen - a Vue 3 data visualization dashboard.",
+  "scripts": {
+    "dev": "vite --host 127.0.0.1 --port 5173 --open",
+    "dev:test": "vite --host 127.0.0.1 --port 4173",
+    "preview": "vite preview --host 127.0.0.1 --port 5174",
+    "typecheck": "vue-tsc --noEmit",
+    "lint": "eslint . --max-warnings=0",
+    "stylelint": "stylelint \"src/**/*.{vue,scss}\"",
+    "test:unit": "vitest run",
+    "test:e2e": "playwright test",
+    "test": "npm run test:unit && npm run test:e2e",
+    "build": "vue-tsc --noEmit && vite build",
+    "check": "npm run typecheck && npm run lint && npm run stylelint && npm run test:unit && npm run build",
+    "msw:init": "msw init public --save"
+  },
+  "dependencies": {
+    "echarts": "5.5.1",
+    "msw": "2.7.0",
+    "pinia": "2.3.0",
+    "vue": "3.5.13",
+    "vue-router": "4.5.0"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.49.1",
+    "@types/node": "20.17.10",
+    "@vitejs/plugin-vue": "5.2.1",
+    "@vue/test-utils": "2.4.6",
+    "@vue/tsconfig": "0.7.0",
+    "eslint": "9.17.0",
+    "eslint-config-prettier": "9.1.0",
+    "eslint-plugin-vue": "9.32.0",
+    "jsdom": "25.0.1",
+    "prettier": "3.4.2",
+    "sass": "1.83.0",
+    "stylelint": "16.12.0",
+    "stylelint-config-recommended-vue": "1.6.0",
+    "stylelint-config-standard-scss": "14.0.0",
+    "typescript": "5.6.3",
+    "typescript-eslint": "8.18.2",
+    "vite": "5.4.11",
+    "vitest": "2.1.8",
+    "vue-tsc": "2.1.10"
+  },
+  "msw": {
+    "workerDirectory": [
+      "public"
+    ]
+  }
+}
